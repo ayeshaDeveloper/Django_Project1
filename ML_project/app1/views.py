@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from app1.models import Person
 from openai import OpenAI
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,logout
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="your_key_here)")
 
 
 def gpt_process(string_value):
@@ -17,7 +23,7 @@ def gpt_process(string_value):
     return str(completion.choices[0].message.content)
 
 # Create your views here.
-
+@login_required
 def welcome(request):
     result=None
     if request.method == 'POST':
@@ -35,16 +41,15 @@ def welcome(request):
         myinstances.save()      
 
     return render(request,"base.html", {'result': result})
-
+@login_required
 def aboutme_fun(request):
     return render(request, "aboutme.html")
-
+@login_required
 def contactus_fun(request):
     return render(request, "contactus.html")
-
+@login_required
 def user_input(request):
-    result = None
-    print("hi")
+    
 
     if request.method == 'POST':
 
@@ -60,3 +65,32 @@ def user_input(request):
             pass
 
     return render(request,'chatBot.html' , {'result' : result })
+
+#SIGNUP & LOGIN FUNCTIONS
+@login_required
+def signup_view(request):
+    if request.method == 'POST':
+        form=UserCreationForm(request.POST)
+        if form.is_valid():
+            user=form.save()
+            login(request,user)
+            return redirect('base')
+    else:
+        form=UserCreationForm
+    return render(request,'signup.html',{'form':form})
+
+@login_required
+def login_view(request):
+    if request.method == 'POST':
+        form=AuthenticationForm(request,data=request.POST)
+        if form.is_valid():
+            login(request,form.get_user())
+            return redirect('base')
+    else:
+        form=UserCreationForm
+    return render(request,'login.html',{'form':form})
+
+
+def logout_fun(request):
+        logout(request)
+        return redirect('login') 

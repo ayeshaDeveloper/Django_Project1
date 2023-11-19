@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <body>
+            <h2>WELCOME TO SIGNUP_PAGE</h2>
+            <form method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit">SIGNUP</button>
+            </form>
+        </body>
+    </head>
+</html>
