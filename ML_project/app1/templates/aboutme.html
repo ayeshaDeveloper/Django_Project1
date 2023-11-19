@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aboutme</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+.R1{
+    width: auto;
+    height: 90px;
+    background-color: rgba(80, 38, 158, 0.911);
+    font-family:Broadway;
+    color: white;
+}
+.C2{
+    padding-left: 60px;
+    font-size: 20px;
+    padding-top: 25px;
+}
+.C1{
+    font-size: 40px;
+    padding: 10px;
+}
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: justify;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+</style>
+{%load static%}
+<link rel="stylesheet" href="{%static 'images/style.css'%}">
+<body>
+    <div class="container-fluid">
+        <!-- First Row (Header) -->
+        <div class="row R1">
+            <div class="col-md-4 C1">CORVIT</div>
+            <div class="col-md-8 C2">
+                    <a href=""><span style="color: white;" >HOME</span></a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="{% url 'aboutme' %}"><span style="color: white;" >ABOUTME</span></a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="{% url 'contactus' %}"><span style="color: white;" >CONTACTUS</span></a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="{% url 'chatBot' %}"><span style="color: white;" >CHATBOT</span></a>
+            </div>
+        </div>
+        
+        <header>
+            <h1 style="text-align: center; font-family: Broadway; color: rgba(80, 38, 158, 0.911); padding: 20px;">AboutMe</h1>
+        </header>
+        
+        <section>
+            <p>Welcome to Corvit, your go-to destination for comprehensive tech courses both online and in-person. We are passionate about empowering individuals with the knowledge and skills they need to thrive in the ever-evolving world of technology.</p>
+        
+            <p>At Corvit, we offer a diverse range of courses covering a wide array of tech topics. Whether you're a beginner looking to get started or a seasoned professional aiming to enhance your skills, we have something for everyone.</p>
+        
+            <p>Our team of experienced instructors is dedicated to providing top-notch education through engaging and interactive content. We believe in hands-on learning, and our courses are designed to equip you with practical skills that you can apply in real-world scenarios.</p>
+        
+            <p><span class="highlight">Online Learning:</span> Explore our online courses from the comfort of your home. Our user-friendly platform allows you to learn at your own pace, with access to a wealth of resources to support your journey.</p>
+        
+            <p><span class="highlight">Physical Courses:</span> For those who prefer face-to-face interaction, we also offer in-person courses at our state-of-the-art facilities. Immerse yourself in a collaborative learning environment and benefit from direct guidance from our expert instructors.</p>
+        
+            <p>Join us at Corvit and take the next step in your tech education. Whether you're interested in coding, data science, cybersecurity, or any other tech field, we have the expertise to guide you towards success.</p>
+        </section>
+        
+        <footer>
+            &copy; 2023 Corvit. All rights reserved.
+        </footer>
+        
+
+    </div>
+</body>
+</html>

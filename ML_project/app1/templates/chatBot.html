@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatBot</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        font-family: Broadway;
+        font-size: 60px;
+        color: rgba(80, 38, 158, 0.911);
+    }
+           body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .chat-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background-color: rgba(80, 38, 158, 0.911);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chat-body {
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .user-message {
+            background-color:rgba(80, 38, 158, 0.911);
+            color: #fff;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #ddd;
+            color: #333;
+            text-align: left;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .send-button {
+            width: 100%;
+            padding: 10px;
+            background-color:rgba(80, 38, 158, 0.911);
+            color: #fff;
+            border: none;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+</style>
+<body>
+    <h1>ChatBot</h1>
+    <div class="chat-container">
+        <div class="chat-header">AI Generative Text</div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot-message">Hello! How can I help you today?</div>
+        </div>
+        <input type="text" class="chat-input" id="userInput" placeholder="Type your message...">
+        <button class="send-button" onclick="sendMessage()">Send</button>
+    </div>
+    
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById('userInput').value;
+            var chatBody = document.getElementById('chatBody');
+            
+            // Add user message to chat
+            var userMessage = '<div class="message user-message">' + userInput + '</div>';
+            chatBody.innerHTML += userMessage;
+    
+            // Simulate a response from the chatbot (replace this with your actual chatbot integration)
+            var botMessage = '<div class="message bot-message">Sure, I can help you with that!</div>';
+            chatBody.innerHTML += botMessage;
+    
+            // Clear the input field
+            document.getElementById('userInput').value = '';
+    
+            // Scroll to the bottom of the chat
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    </script>
+    
+</body>
+</html>

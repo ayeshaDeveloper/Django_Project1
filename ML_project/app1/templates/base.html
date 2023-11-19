@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home_page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+.R1{
+    width: auto;
+    height: 90px;
+    background-color: rgba(80, 38, 158, 0.911);
+    font-family:Broadway;
+    color: white;
+}
+.C2{
+    padding-left: 60px;
+    font-size: 20px;
+    padding-top: 25px;
+}
+.R2{
+    width: auto;
+    height: 500px;
+}
+.C1{
+    font-size: 40px;
+    padding: 10px;
+}
+.C3{
+    color:white; 
+    font-family:Broadway;
+    padding: 100px;
+}
+.R3{
+    width: auto;
+    height: 100px;
+    color: purple;
+    font-family: Broadway;
+    padding-top: 40px;
+    font-size: 50px;
+    padding-left: 410px;
+}
+.R4{
+    width: auto;
+    height: 500px;
+    padding-left: 80px;
+    padding-top: 40px;
+}
+.R5{
+    width: auto;
+    height: 700px;
+    color: purple;
+    font-family: Broadway;
+    padding-top: 40px;
+    font-size: 50px;
+    
+}
+</style>
+{%load static%}
+<link rel="stylesheet" href="{%static 'images/style.css'%}">
+<body>
+  <div class="container-fluid">
+    <!-- First Row (Header) -->
+    <div class="row R1">
+        <div class="col-md-4 C1">CORVIT</div>
+        <div class="col-md-8 C2">
+                <a href=""><span style="color: white;" >HOME</span></a>&nbsp&nbsp&nbsp&nbsp
+                <a href="{% url 'aboutme' %}"><span style="color: white;" >ABOUTME</span></a>&nbsp&nbsp&nbsp&nbsp
+                <a href="{% url 'contactus' %}"><span style="color: white;" >CONTACTUS</span></a>&nbsp&nbsp&nbsp&nbsp
+                <a href="{% url 'chatBot' %}"><span style="color: white;" >CHATBOT</span></a>
+        </div>
+    </div>
+    
+    <!-- ROW 2ND(landing page) -->
+    <div class="row R2" style="background-image: url('{% static 'images/pic1.jpg'%}'); background-repeat: no-repeat; background-size:100%;">
+        <div class="col-md-8 C3">
+            <h1 style="font-size: 60px;">BOOSTUP YOUR SKILLS<br> WITH A NEW WAY OF<br>LEARNING. </h1>
+            
+        </div>
+        <div class="col-md-4">
+            <img src="{%static 'images/pic2.png'%}">
+        </div>
+    </div>
+    <!---------ROW 3RD(popular programs)-->
+    <div class="row R3">
+        <br><br><br>
+        <h2 style="font-size: 60px;">Popular Programs</h2>
+    </div>
+    <!----------ROW 4TH (COURSES)-->
+<div class="row R4">
+<div class="col-md-4">
+<div class="row"><img src="{%static 'images/a1.jpg'%}" style="width:300px; height:300px;></div>
+<div class="row"><h3 style="padding-top: 20px; font-family: Broadway;">Artificial Intelligence</h3></div>
+<div class="row">content</div>
+</div>
+<div class="col-md-4">
+    <div class="row"><img src="{%static 'images/w1.png'%}" style="width:300px; height:300px;></div>
+<div class="row"><h3 style="padding-top: 20px; font-family: Broadway;">Web Development</h3></div>
+<div class="row">content</div>
+</div>
+<div class="col-md-4">
+    <div class="row"><img src="{%static 'images/c1.jpg'%}"style="width:300px; height:300px; ></div>
+<div class="row"><h3 style="padding-top: 20px; font-family: Broadway; padding-left: 20px;">Networking</h3></div>
+<div class="row">content</div>
+</div>
+</div>
+<!-----------ROW 5TH(EVENTS)-->
+<div class="row R5">
+<h2 style="padding-left: 520px; font-size: 60px;">Recent Events</h2>
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+    
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{%static 'images/e1.jpg'%}" style="width:100%; height:400px;">
+            </div>
+    
+            <div class="carousel-item">
+                <img src="{%static 'images/e2.jpg'%}" style="width:100%; height:400px;">
+            </div>
+        
+            <div class="carousel-item">
+                <img src="{%static 'images/e3.jpg'%}" style="width:100%; height:400px;">
+            </div>
+        </div>
+    
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+</div>
+<!-----------ROW 9TH(ADMISSIONS...)-->
+<div class="row R9">
+<h2 style="padding-left: 540px; color: purple; font-family: Broadway; padding-bottom: 30px;">Apply for Admission</h2>
+<div class="col-md-8">
+    <form method="post" style="text-align: center;">
+        {% csrf_token %}
+  
+          <label for="text">Enter FirstName:</label>
+          <input type="text" id="name" name="name"><br><br>
+  
+          <label for="text">Enter LastName:</label>
+          <input type="text" id="name" name="name"><br><br>
+  
+          <label for="email">Enter your email:</label>
+          <input type="email" id="email" name="email"><br><br>
+  
+          <label for="password">Enter password:</label>
+          <input type="password" id="password" name="password"><br><br>
+  
+          <label for="number">Enter your course:</label>
+          <input type="number" id="number" name="number"><br><br>
+  
+   <button type="submit">SUBMIT</button>
+  
+      </form><br><br>
+</div>
+<div class="col-md-4">
+    <img src="{%static 'images/pic2.png'%}" style="width: 600px; height: 400px; padding-right: 250px; padding-bottom: 100px;">
+   
+</div>
+</div>
+
+<!-----FOOTER-->
+<div class="row footer">
+<div class="col-md-12">
+    &copy; 2023 Your Website. All Rights Reserved.
+</div>
+</div>
+
+</div>   
+          
+
+</body>
+</html>
+{{result}}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .R1{
+    width: auto;
+    height: 90px;
+    background-color: rgba(80, 38, 158, 0.911);
+    font-family:Broadway;
+    color: white;
+}
+.C2{
+    padding-left: 60px;
+    font-size: 20px;
+    padding-top: 25px;
+}
+.C1{
+    font-size: 40px;
+    padding: 10px;
+}
+.R2{
+    padding-top: 30px;
+    color: rgba(80, 38, 158, 0.911);
+    font-family: Broadway;
+    padding-left: 550px;
+}
+.R3{
+ padding-left: 550px;
+ padding-top: 30px;
+}
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="row R1">
+            <div class="col-md-4 C1">CORVIT</div>
+            <div class="col-md-8 C2">
+                    <a href=""><span style="color: white;" >HOME</span></a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="{% url 'aboutme' %}"><span style="color: white;" >ABOUTME</span></a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="{% url 'contactus' %}"><span style="color: white;" >CONTACTUS</span></a>&nbsp&nbsp&nbsp&nbsp
+                    <a href="{% url 'chatBot' %}"><span style="color: white;" >CHATBOT</span></a>
+            </div>
+        </div>
+        <div class="row R2">
+            <h1 style="text-align: center;">Admission_Form</h1>
+        </div>
+        <div class="row R3">
+            <form method="post" style="text-align: center;">
+                {% csrf_token %}
+          
+                  <label for="text">Enter FirstName:</label>
+                  <input type="text" id="name" name="name"><br><br>
+          
+                  <label for="text">Enter LastName:</label>
+                  <input type="text" id="name" name="name"><br><br>
+          
+                  <label for="email">Enter your email:</label>
+                  <input type="email" id="email" name="email"><br><br>
+          
+                  <label for="password">Enter password:</label>
+                  <input type="password" id="password" name="password"><br><br>
+          
+                  <label for="number">Enter your course:</label>
+                  <input type="number" id="number" name="number"><br><br>
+          
+           <button type="submit">SUBMIT</button>
+          
+              </form><br><br>
+            </div>
+          
+        </div>
+    </div>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
